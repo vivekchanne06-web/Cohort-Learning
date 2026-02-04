@@ -8,7 +8,7 @@ const App = () => {
     
 
 function fetchNotes(){
-  axios.get("http://localhost:9000/api/notes")
+  axios.get("https://cohort-learning-task.onrender.com/api/notes")
 .then(response => {
   setNotes(response.data.findNotes)
 })
@@ -25,7 +25,7 @@ function handleSubmit(e){
   const {title, description} = e.target.elements
 
 
-axios.post("http://localhost:9000/api/notes", {
+axios.post("https://cohort-learning-task.onrender.com/api/notes", {
   title: title.value,
   description: description.value
 })
@@ -39,7 +39,7 @@ axios.post("http://localhost:9000/api/notes", {
 }
 
 function handleDelete(noteId){
-axios.delete("http://localhost:9000/api/notes/"+noteId)
+axios.delete("https://cohort-learning-task.onrender.com/api/notes/"+noteId)
 .then(response => {
   console.log(response.data);
   fetchNotes()
@@ -52,7 +52,7 @@ function handleUpdate(noteId) {
   const changeTitle= prompt("Enter new title:");
   const changedis = prompt("Enter new description:");
 
-  axios.patch("http://localhost:9000/api/notes/" + noteId, {
+  axios.patch("https://cohort-learning-task.onrender.com/api/notes/" + noteId, {
     description: changedis,
     title: changeTitle
   })
