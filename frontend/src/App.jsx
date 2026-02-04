@@ -65,7 +65,9 @@ function handleUpdate(noteId) {
   
   return (
     <>
-
+      <div className="heading"><h1>My Note Card</h1>
+      <p>Click to create, update, or delete notes.</p>
+      </div>
     <form className='note-create' onSubmit={handleSubmit}>
       <input name='title' type="text" placeholder='Enter Title' />
       <input  name='description' type="text" placeholder='Enter Description' />
